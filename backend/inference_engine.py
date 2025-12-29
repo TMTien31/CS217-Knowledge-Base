@@ -374,13 +374,19 @@ class InferenceEngine:
                 
             # Nếu có conclusion rule, kiểm tra xem có thể kết luận không
             elif applicable_conclusion:
-                # Chọn rule theo conflict resolution strategy
-                rule_dicts = [r.fire() for r in applicable_conclusion]
-                selected_dict = self.conflict_resolver(rule_dicts)
-                selected_rule = next(
-                    (r for r in applicable_conclusion if r.rule_id == selected_dict['rule_id']),
-                    None
-                )
+                # Chọn rule theo THỨ TỰ ƯU TIÊN: Độ 4 → 3 → 2b → 2a → 1
+                # Dừng ngay khi tìm thấy độ đầu tiên phù hợp
+                degree_priority_order = ['4', '3', '2b', '2a', '1']
+                
+                selected_rule = None
+                for target_degree in degree_priority_order:
+                    # Tìm rules của độ hiện tại
+                    rules_for_degree = [r for r in applicable_conclusion if r.degree == target_degree]
+                    if rules_for_degree:
+                        # Tìm thấy độ này → Chọn rule đầu tiên và DỪNG NGAY
+                        selected_rule = rules_for_degree[0]
+                        self._trace(f"  Sequential selection: Found degree {target_degree}, stopping search")
+                        break
                 
                 if selected_rule:
                     self._trace(f"→ Firing conclusion rule: {selected_rule.rule_id}")

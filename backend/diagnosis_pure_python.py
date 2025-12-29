@@ -320,6 +320,7 @@ class DiagnosisEngine:
     def diagnose(self, clinical_data: Dict) -> Dict:
         """
         Chẩn đoán dựa trên dữ liệu lâm sàng
+        Kiểm tra TUẦN TỰ từ độ cao xuống thấp, dừng ngay khi tìm thấy độ đầu tiên phù hợp
         
         Args:
             clinical_data: Dictionary chứa các thông tin lâm sàng
@@ -327,46 +328,56 @@ class DiagnosisEngine:
         Returns:
             Dictionary chứa kết quả chẩn đoán
         """
-        matched_rules = []
+        # Danh sách các độ theo thứ tự ưu tiên từ cao xuống thấp
+        degree_priority_order = [
+            ('4', 400),   # Độ 4 - Nguy kịch
+            ('3', 300),   # Độ 3 - Thần kinh nặng
+            ('2b', 250),  # Độ 2b - Tuần hoàn
+            ('2a', 200),  # Độ 2a - Cảnh báo
+            ('1', 100)    # Độ 1 - Nhẹ
+        ]
         
-        # Tìm tất cả rules match
-        for rule in self.rules:
-            if rule.evaluate(clinical_data):
-                matched_rules.append({
-                    'rule_id': rule.rule_id,
-                    'degree': rule.degree,
-                    'priority': rule.priority,
-                    'description': rule.description,
-                    'source': rule.source
-                })
+        # Kiểm tra TUẦN TỰ từng độ theo thứ tự ưu tiên
+        for target_degree, target_priority in degree_priority_order:
+            # Tìm các rules của độ hiện tại
+            matched_rules_for_degree = []
+            
+            for rule in self.rules:
+                if rule.degree == target_degree and rule.evaluate(clinical_data):
+                    matched_rules_for_degree.append({
+                        'rule_id': rule.rule_id,
+                        'degree': rule.degree,
+                        'priority': rule.priority,
+                        'description': rule.description,
+                        'source': rule.source
+                    })
+            
+            # Nếu tìm thấy ít nhất 1 rule phù hợp với độ này → DỪNG NGAY
+            if matched_rules_for_degree:
+                # Nếu có nhiều rules cùng độ, chọn rule đầu tiên tìm được
+                best_match = matched_rules_for_degree[0]
+                
+                return {
+                    'success': True,
+                    'degree': best_match['degree'],
+                    'priority': best_match['priority'],
+                    'primary_rule': best_match,
+                    'all_matched_rules': matched_rules_for_degree,
+                    'total_rules_matched': len(matched_rules_for_degree),
+                    'input_data': clinical_data
+                }
         
-        # Nếu có rules match
-        if matched_rules:
-            # Sắp xếp theo priority (cao → thấp)
-            matched_rules.sort(key=lambda x: x['priority'], reverse=True)
-            
-            best_match = matched_rules[0]
-            
-            return {
-                'success': True,
-                'degree': best_match['degree'],
-                'priority': best_match['priority'],
-                'primary_rule': best_match,
-                'all_matched_rules': matched_rules,
-                'total_rules_matched': len(matched_rules),
-                'input_data': clinical_data
-            }
-        else:
-            return {
-                'success': False,
-                'degree': 'Không xác định',
-                'priority': 0,
-                'primary_rule': None,
-                'all_matched_rules': [],
-                'total_rules_matched': 0,
-                'input_data': clinical_data,
-                'message': 'Không có rule nào được match. Cần bổ sung dữ liệu lâm sàng.'
-            }
+        # Nếu không có độ nào match
+        return {
+            'success': False,
+            'degree': 'Không xác định',
+            'priority': 0,
+            'primary_rule': None,
+            'all_matched_rules': [],
+            'total_rules_matched': 0,
+            'input_data': clinical_data,
+            'message': 'Không có rule nào được match. Cần bổ sung dữ liệu lâm sàng.'
+        }
     
     def load_rules_from_json(self, filepath: str):
         """Load rules từ file JSON (tương thích với data/rules.json)"""
