@@ -4,7 +4,6 @@
       "id": "R1-1",
       "name": "Độ 1 - Trẻ chỉ có loét miệng",
       "grade": "1",
-      "priority": 0,
       "conditions": [
         {
           "field": "mouth_ulcer",
@@ -21,7 +20,6 @@
       "id": "R1-2",
       "name": "Độ 1 - Trẻ chỉ có phát ban tay chân miệng",
       "grade": "1",
-      "priority": 0,
       "conditions": [
         {
           "field": "rash_hand_foot_mouth",
@@ -38,7 +36,6 @@
       "id": "R1-3",
       "name": "Độ 1 - Không có biến chứng (mặc định)",
       "grade": "1",
-      "priority": 0,
       "conditions": [],
       "conclusion": {
         "disease_level": "1",
@@ -49,7 +46,6 @@
       "id": "R2a-1",
       "name": "Độ 2a - Giật mình < 2 lần/30 phút (tiền sử)",
       "grade": "2a",
-      "priority": 1,
       "conditions": [
         {
           "field": "startle_per_30min",
@@ -71,7 +67,6 @@
       "id": "R2a-2",
       "name": "Độ 2a - Sốt > 39°C",
       "grade": "2a",
-      "priority": 1,
       "conditions": [
         {
           "field": "fever_temp_c",
@@ -88,7 +83,6 @@
       "id": "R2a-3",
       "name": "Độ 2a - Sốt > 2 ngày",
       "grade": "2a",
-      "priority": 1,
       "conditions": [
         {
           "field": "fever_days",
@@ -105,7 +99,6 @@
       "id": "R2a-4",
       "name": "Độ 2a - Nôn nhiều",
       "grade": "2a",
-      "priority": 1,
       "conditions": [
         {
           "field": "vomiting_many",
@@ -122,7 +115,6 @@
       "id": "R2a-5",
       "name": "Độ 2a - Lơ mơ",
       "grade": "2a",
-      "priority": 1,
       "conditions": [
         {
           "field": "lethargy",
@@ -139,7 +131,6 @@
       "id": "R2a-6",
       "name": "Độ 2a - Khó ngủ",
       "grade": "2a",
-      "priority": 1,
       "conditions": [
         {
           "field": "sleep_difficulty",
@@ -156,7 +147,6 @@
       "id": "R2a-7",
       "name": "Độ 2a - Quấy khóc vô cớ",
       "grade": "2a",
-      "priority": 1,
       "conditions": [
         {
           "field": "irritable",
@@ -173,7 +163,6 @@
       "id": "R2b-1",
       "name": "Độ 2b - Giật mình ghi nhận lúc khám",
       "grade": "2b",
-      "priority": 2,
       "conditions": [
         {
           "field": "startle_observed",
@@ -190,7 +179,6 @@
       "id": "R2b-2",
       "name": "Độ 2b - Giật mình ≥ 2 lần/30 phút",
       "grade": "2b",
-      "priority": 2,
       "conditions": [
         {
           "field": "startle_per_30min",
@@ -207,7 +195,6 @@
       "id": "R2b-2a",
       "name": "Độ 2b - Giật mình kèm ngủ gà",
       "grade": "2b",
-      "priority": 2,
       "conditions": [
         {
           "field": "startle_per_30min",
@@ -229,7 +216,6 @@
       "id": "R2b-2b",
       "name": "Độ 2b - Giật mình kèm mạch nhanh > 130 (không sốt)",
       "grade": "2b",
-      "priority": 2,
       "conditions": [
         {
           "field": "startle_per_30min",
@@ -251,7 +237,6 @@
       "id": "R2b-3",
       "name": "Độ 2b - Sốt cao không đáp ứng thuốc",
       "grade": "2b",
-      "priority": 3,
       "conditions": [
         {
           "field": "fever_temp_c",
@@ -273,7 +258,6 @@
       "id": "R2b-4",
       "name": "Độ 2b - Mạch nhanh > 150 (không sốt)",
       "grade": "2b",
-      "priority": 3,
       "conditions": [
         {
           "field": "hr_no_fever",
@@ -290,7 +274,6 @@
       "id": "R2b-5",
       "name": "Độ 2b - Thất điều vận động",
       "grade": "2b",
-      "priority": 3,
       "conditions": [
         {
           "field": "ataxia",
@@ -307,7 +290,6 @@
       "id": "R2b-6",
       "name": "Độ 2b - Rối loạn nhãn cầu",
       "grade": "2b",
-      "priority": 3,
       "conditions": [
         {
           "field": "nystagmus_strabismus",
@@ -324,7 +306,6 @@
       "id": "R2b-7",
       "name": "Độ 2b - Yếu hoặc liệt chi",
       "grade": "2b",
-      "priority": 3,
       "conditions": [
         {
           "field": "limb_weakness",
@@ -341,7 +322,6 @@
       "id": "R2b-8",
       "name": "Độ 2b - Liệt thần kinh sọ",
       "grade": "2b",
-      "priority": 3,
       "conditions": [
         {
           "field": "cranial_nerve_palsy",
@@ -358,7 +338,6 @@
       "id": "R2b-9",
       "name": "Độ 2b - Tăng trương lực cơ",
       "grade": "2b",
-      "priority": 3,
       "conditions": [
         {
           "field": "hypertonia",
@@ -375,7 +354,6 @@
       "id": "R2b-10",
       "name": "Độ 2b - Rối loạn tri giác",
       "grade": "2b",
-      "priority": 3,
       "conditions": [
         {
           "type": "OR",
@@ -402,7 +380,6 @@
       "id": "R3-1",
       "name": "Độ 3 - Mạch nhanh > 170 (không sốt)",
       "grade": "3",
-      "priority": 4,
       "conditions": [
         {
           "field": "hr_no_fever",
@@ -419,7 +396,6 @@
       "id": "R3-1a",
       "name": "Độ 3 - Mạch chậm",
       "grade": "3",
-      "priority": 4,
       "conditions": [
         {
           "type": "OR",
@@ -466,7 +442,6 @@
       "id": "R3-2",
       "name": "Độ 3 - Tăng HA tâm thu (< 12 tháng)",
       "grade": "3",
-      "priority": 4,
       "conditions": [
         {
           "field": "age_months",
@@ -488,7 +463,6 @@
       "id": "R3-3",
       "name": "Độ 3 - Tăng HA tâm thu (12-24 tháng)",
       "grade": "3",
-      "priority": 4,
       "conditions": [
         {
           "field": "age_months",
@@ -515,7 +489,6 @@
       "id": "R3-4",
       "name": "Độ 3 - Tăng HA tâm thu (≥ 24 tháng)",
       "grade": "3",
-      "priority": 4,
       "conditions": [
         {
           "field": "age_months",
@@ -537,7 +510,6 @@
       "id": "R3-5",
       "name": "Độ 3 - Khó thở",
       "grade": "3",
-      "priority": 4,
       "conditions": [
         {
           "field": "resp_distress",
@@ -554,7 +526,6 @@
       "id": "R3-5a",
       "name": "Độ 3 - Thở nhanh",
       "grade": "3",
-      "priority": 4,
       "conditions": [
         {
           "type": "OR",
@@ -601,7 +572,6 @@
       "id": "R3-5b",
       "name": "Độ 3 - Thở rít",
       "grade": "3",
-      "priority": 4,
       "conditions": [
         {
           "field": "stridor",
@@ -618,7 +588,6 @@
       "id": "R3-6",
       "name": "Độ 3 - SpO2 < 94%",
       "grade": "3",
-      "priority": 4,
       "conditions": [
         {
           "field": "spo2",
@@ -640,7 +609,6 @@
       "id": "R3-7",
       "name": "Độ 3 - Rối loạn vận mạch",
       "grade": "3",
-      "priority": 4,
       "conditions": [
         {
           "field": "mottled_sweat_cold",
@@ -657,7 +625,6 @@
       "id": "R4-1",
       "name": "Độ 4 - Ngưng thở hoặc thở bất thường",
       "grade": "4",
-      "priority": 5,
       "conditions": [
         {
           "field": "apnea_irregular_breath",
@@ -674,7 +641,6 @@
       "id": "R4-2",
       "name": "Độ 4 - Tím tái",
       "grade": "4",
-      "priority": 5,
       "conditions": [
         {
           "field": "cyanosis",
@@ -691,7 +657,6 @@
       "id": "R4-3",
       "name": "Độ 4 - SpO2 < 92%",
       "grade": "4",
-      "priority": 5,
       "conditions": [
         {
           "field": "spo2",
@@ -708,7 +673,6 @@
       "id": "R4-4",
       "name": "Độ 4 - Phù phổi cấp",
       "grade": "4",
-      "priority": 5,
       "conditions": [
         {
           "field": "pulmonary_edema",
@@ -725,7 +689,6 @@
       "id": "R4-5",
       "name": "Độ 4 - Sốc (mạch không bắt)",
       "grade": "4",
-      "priority": 5,
       "conditions": [
         {
           "field": "shock_pulse_absent",
@@ -742,7 +705,6 @@
       "id": "R4-6",
       "name": "Độ 4 - Hiệu áp ≤ 25 mmHg",
       "grade": "4",
-      "priority": 5,
       "conditions": [
         {
           "field": "pulse_pressure",

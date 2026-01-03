@@ -134,7 +134,6 @@
     {
       "id": "R0-1",
       "name": "Chẩn đoán HFMD điển hình",
-      "priority": 10,
       "conditions": [
         {
           "type": "OR",
@@ -167,7 +166,6 @@
     {
       "id": "R0-2",
       "name": "Chẩn đoán TCM với yếu tố dịch tễ",
-      "priority": 8,
       "conditions": [
         {
           "type": "OR",
@@ -211,7 +209,6 @@
     {
       "id": "R0-4",
       "name": "Cảnh báo biến chứng sớm",
-      "priority": 9,
       "conditions": [
         {
           "type": "OR",
@@ -265,7 +262,6 @@
     {
       "id": "R0-5",
       "name": "Chẩn đoán xác định bằng RT-PCR",
-      "priority": 10,
       "conditions": [
         {
           "field": "rt_pcr_result",
